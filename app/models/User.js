@@ -8,7 +8,7 @@ class User{
         this.lastUpdated = new Date()
     }
 
-     get getUserName(){
+    get getUserName(){
         return this.userName
     }
 
@@ -22,6 +22,14 @@ class User{
 
     get getLastUpdated(){
         return this.lastUpdated
+    }
+
+    set setUserName(newUserName){
+        this.userName = newUserName
+    }
+
+    set setBio(newBio){
+        this.bio = newBio
     }
 }
 

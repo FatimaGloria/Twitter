@@ -44,7 +44,7 @@ describe ("Unit Tests for User class", () =>{
         
         //codigo de validación de resultados
         user.setUserName = "Gilmar"
-        expect(user.UserName).toBe("Gilmar")
+        expect(user.userName).toBe("Gilmar")
         
         user.setBio = "New bio"
         expect(user.bio).toBe("New bio")
