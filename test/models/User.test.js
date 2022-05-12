@@ -32,4 +32,21 @@ describe ("Unit Tests for User class", () =>{
         expect(user.getDateCreated).not.toBeUndefined()
         expect(user.getLastUpdated).not.toBeUndefined()
     });
+
+    /*
+    Requerimiento 4: Cada objeto necesita los siguientes setters: `setUsername` y `setBio`, para actualizar dichas propiedades.
+    Solución: Agrega los setters usando la palabra `set` y modificando el atributo indicado.
+    */  
+   
+    test ('Add setters', () => {
+        //código que vamos a usar en la app
+        const user = new User(1, "carlogilmar", "Carlo", "Bio")
+        
+        //codigo de validación de resultados
+        user.setUserName = "Gilmar"
+        expect(user.UserName).toBe("Gilmar")
+        
+        user.setBio = "New bio"
+        expect(user.bio).toBe("New bio")
+    });
 })
