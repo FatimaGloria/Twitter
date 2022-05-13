@@ -12,6 +12,10 @@ class UserService {
     static updateBio(user, bio){
         user.setBio = bio
     }
+
+    static updateUserUserName(user, userName){
+        user.setUserName = userName
+    }
 }
 
 module.exports = UserService
