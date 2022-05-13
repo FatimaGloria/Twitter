@@ -32,4 +32,16 @@ describe ("Tests for UserView", () =>{
         const result = UserView.createUser(payload)
         expect(result.error).toMatch(/necesitan tener un valor válido/)
     });
+
+     /*
+    Requerimiento 4: Verifica que se pueda crear un objeto `User`, al enviar un payload con las siguientes propiedades: `username`, `id` y `name`.
+    */
+    
+    test ('4. Create a user by a given valid payload', () => { 
+        const payload = {userName: "userName", id: 1, name: "name"}
+        const result = UserView.createUser(payload)
+        expect(result.name).toBe("name")
+        expect(result.userName).toBe("userName")
+        expect(result.id).toBe(1)
+    });
 })
