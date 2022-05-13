@@ -39,7 +39,26 @@ describe ("Tests for UserService", () =>{
     //código que vamos a usar en la app
         const user = UserService.create(1, "carlogilmar", "Carlo")
         UserService.updateUserUserName(user, "carlog")
+    
     //codigo de validación de resultados
         expect(user.userName).toBe("carlog") 
+    });
+
+    /*
+    Requerimiento 4: Agregar un nuevo método estático en `UserService` llamado `getAllUsernames`, 
+    que recibirá una lista de objetos de la clase `User`, y regresará la lista de todos los usernames de dichos objetos. 
+    */
+
+    test ('4. Given a list of users give me the list of usernames', () => { 
+        //código que vamos a usar en la app
+            const user1 = UserService.create(1, "carlogilmar1", "Carlo")
+            const user2 = UserService.create(1, "whoopaMC", "Whoopa")
+            const user3 = UserService.create(1, "whoopyMC", "Whoopy")
+            const usernames = UserService.getAllUsernames([user1, user2, user3])
+
+        //codigo de validación de resultados
+            expect(usernames).toContain("carlogilmar1")
+            expect(usernames).toContain("whoopaMC")
+            expect(usernames).toContain("whoopyMC")
     });
 })
