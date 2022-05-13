@@ -13,4 +13,20 @@ describe ("Tests for UserService", () =>{
     expect(user.bio).not.toBeUndefined()
     });
 
+    /*
+    Requerimiento 2: Agregar un nuevo método estático en `UserService` llamado `getInfo` que al recibir un objeto 
+    de la clase `User`, me regrese una lista con todos los valores de los atributos de dicho objeto.
+    */
+
+    test ('2. Get all user data in a list', () => { 
+        //código que vamos a usar en la app
+        const user = UserService.create(1, "carlogilmar", "Carlo")
+        const userInfoInList = UserService.getInfo(user)
+
+        //codigo de validación de resultados
+        expect(userInfoInList[0]).toBe(1)
+        expect(userInfoInList[1]).toBe("carlogilmar")
+        expect(userInfoInList[2]).toBe("Carlo")
+        expect(userInfoInList[3]).toBe("Sin bio")
+        });
 })
